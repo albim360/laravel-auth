@@ -3,6 +3,7 @@
 @section('content')
     <div class="container">
         <h1>Crea nuovo progetto</h1>
+        <a href="{{ route('projects.index') }}" class="btn btn-secondary my-1">Torna alla lista dei progetti</a>
 
         <form action="{{ route('projects.store') }}" method="POST">
             @csrf
@@ -30,7 +31,8 @@
                     <option value="2">Completato</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary">Crea</button>
+            <button type="submit" class="btn btn-primary my-2 w-100 ">Crea</button>
+            <button type="reset" class="btn btn-secondary my-2 w-100">Reset</button>
         </form>
     </div>
 @endsection

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('url')->nullable();
-            $table->string('status')->default('in progress');
+            $table->string('status')->default('0');
             $table->string('customer')->default('none'); 
             $table->timestamps();
         });        

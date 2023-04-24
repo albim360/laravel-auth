@@ -3,6 +3,7 @@
 @section('content')
     <div class="container">
         <h1>Modifica progetto</h1>
+        <a href="{{ route('projects.index') }}" class="btn btn-secondary my-1">Torna alla lista dei progetti</a>
 
         <form action="{{ route('projects.update', $project) }}" method="POST">
             @csrf
@@ -33,7 +34,8 @@
                 <input type="text" class="form-control" id="url" name="url" value="{{ $project->url }}">
             </div>
                 </label>
-            <button type="submit" class="btn btn-primary">Salva</button>
+            <button type="submit" class="btn btn-primary my-2 w-100">Salva</button>
+            <button type="reset" class="btn btn-secondary my-2 w-100">Annulla modifiche</button>
         </form>
     </div>
 @endsection
