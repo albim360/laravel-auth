@@ -24,12 +24,12 @@
                         <td>{{ $project->url }}</td>
                         <td>{{ $project->status }}</td>
                         <td>
-                            <a href="{{ route('projects.show', $project) }}" class="btn btn-primary">Visualizza</a>
-                            <a href="{{ route('projects.edit', $project) }}" class="btn btn-warning">Modifica</a>
+                            <a href="{{ route('projects.show', $project) }}" class="btn btn-primary m-2 w-100">Visualizza</a>
+                            <a href="{{ route('projects.edit', $project) }}" class="btn btn-warning m-2 w-100">Modifica</a>
                             <form action="{{ route('projects.destroy', $project) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Elimina</button>
+                                <button type="submit" class="btn btn-danger m-2 w-100">Elimina</button>
                             </form>
                         </td>
                     </tr>
