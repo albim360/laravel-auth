@@ -3,7 +3,8 @@
 @section('content')
     <div class="container">
         <h1>Lista dei progetti</h1>
-        <a href="{{ route('projects.create') }}" class="btn btn-primary mb-3">Nuovo Progetto</a>
+            <a href="{{ route('projects.create') }}" class="btn btn-primary mb-3">Nuovo Progetto</a>
+            <a href="{{ route('deleted-projects.index') }}" class="btn btn-danger mb-3 mx-2">Progetti Eliminati</a>
         <table class="table">
             <thead>
                 <tr>

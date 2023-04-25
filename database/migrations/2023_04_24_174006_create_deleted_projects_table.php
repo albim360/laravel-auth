@@ -13,26 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('projects', function (Blueprint $table) {
+        Schema::create('deleted_projects', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('slug');
             $table->text('description');
-            $table->string('url')->nullable();
-            $table->string('status')->default('In Corso');
-            $table->string('customer')->default('none'); 
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
-        });        
+        });
     }
-    
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
-        Schema::dropIfExists('projects');
+        Schema::dropIfExists('deleted_projects');
     }
 };
